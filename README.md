@@ -1,6 +1,6 @@
 # OrbDen Security Updates
 
-Public security advisories and reviewed remediation packages from [OrbDen](https://github.com/local-control-panel). A static site and a versioned JSON feed, generated together and hosted on Cloudflare Pages. The public address is <https://updates.orbden.com>; the feed is `https://updates.orbden.com/feed/v1/index.json`.
+Public security advisories and reviewed remediation packages from [OrbDen](https://github.com/local-control-panel). A static site and a versioned JSON feed, generated together and hosted on GitHub Pages (deployed by `.github/workflows/pages.yml` on every push to `main`). The public address is <https://updates.orbden.com>; the feed is `https://updates.orbden.com/feed/v1/index.json`.
 
 **Current scope:** the catalog publisher, public website, package validation and engine integration contract. The Operations Engine consumer, unattended execution and panel integration are separate work. The initial PHP advisory has **no executable fix**: this repository does not claim to have patched any server.
 
