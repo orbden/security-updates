@@ -1,10 +1,10 @@
 # Feed v1 and engine integration contract
 
-Status: publisher implemented; engine consumer and execution remain to be implemented and tested in Operations Engine. The endpoint origin is selected when the Cloudflare Pages project/custom domain is connected.
+Status: publisher implemented; engine consumer and execution remain to be implemented and tested in Operations Engine. The endpoint origin is the GitHub Pages custom domain `updates.orbden.com`.
 
 ## Discovery
 
-Poll `GET /feed/v1/index.json` on the **configured production HTTPS origin** (`https://updates.orbden.com`) approximately hourly, with jitter, conditional requests and failure backoff. Do not use GitHub or preview deployment URLs as an automatic fallback. The publisher uses Cloudflare Pages ETags and `_headers` revalidation.
+Poll `GET /feed/v1/index.json` on the **configured production HTTPS origin** (`https://updates.orbden.com`) approximately hourly, with jitter, conditional requests and failure backoff. Do not use GitHub or preview deployment URLs as an automatic fallback. GitHub Pages serves ETags and a short cache lifetime; clients must revalidate with conditional requests. The generated `_headers` file is not applied by GitHub Pages.
 
 ```json
 {
